@@ -29,13 +29,12 @@ type
 var
   Form1: TForm1;
   pr_path: String;
-  s: String;
 
 const
   //Only look for v3.7 :P
   PR_WIN64_PATH = 'C:\Program Files\POV-Ray\v3.7\bin\pvengine64.exe';
   PR_WIN32_PATH = 'C:\Program Files\POV-Ray\v3.7\bin\pvengine.exe';
-  PR_LINUX_PATH = '/usr/bin/povray';
+  PR_UNIX_PATH = '/usr/bin/povray';
 
 implementation
 {$IFDEF WINDOWS}
@@ -45,6 +44,8 @@ uses
 {$IFDEF UNIX}
 uses
   Unix;
+var
+  status: Longint;
 {$ENDIF}
 
 {$R *.lfm}
@@ -74,9 +75,9 @@ begin
 
   {$ENDIF}
   {$IFDEF UNIX}
-  if FileExists(PR_LINUX_PATH) then
+  if FileExists(PR_UNIX_PATH) then
   begin
-       Edit1.Caption:=PR_WIN32_PATH;
+       Edit1.Caption:=PR_UNIX_PATH;
   end;
   {$ENDIF}
 
@@ -101,7 +102,13 @@ begin
   {$ENDIF}
   {$IFDEF UNIX}
   //Not tested
-  fpExecv(pr_path, 'woodbox.pov');
+  status:=fpSystem(pr_path+' woodbox.pov');
+  if status = 0 then
+  begin
+    ShowMessage('Success');
+  end
+  else
+    ShowMessage('Command exited with status code: ' + IntToStr(status));
   {$ENDIF}
 end;
 

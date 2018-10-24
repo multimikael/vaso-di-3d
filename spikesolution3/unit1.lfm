@@ -10,7 +10,7 @@ object Form1: TForm1
   LCLVersion = '1.8.4.0'
   object Edit1: TEdit
     Left = 8
-    Height = 23
+    Height = 37
     Top = 32
     Width = 216
     TabOrder = 0
@@ -27,9 +27,9 @@ object Form1: TForm1
   end
   object Label1: TLabel
     Left = 10
-    Height = 15
+    Height = 21
     Top = 10
-    Width = 74
+    Width = 95
     Caption = 'Locate Povray'
     ParentColor = False
   end
