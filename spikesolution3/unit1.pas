@@ -42,6 +42,10 @@ implementation
 uses
   ShellApi;
 {$ENDIF}
+{$IFDEF UNIX}
+uses
+  Unix;
+{$ENDIF}
 
 {$R *.lfm}
 
@@ -69,7 +73,7 @@ begin
   {$ENDIF}
 
   {$ENDIF}
-  {$IFDEF LINUX}
+  {$IFDEF UNIX}
   if FileExists(PR_LINUX_PATH) then
   begin
        Edit1.Caption:=PR_WIN32_PATH;
@@ -95,7 +99,7 @@ begin
   if ShellExecute(0,nil, PCHAR('"'+pr_path+'"'), PCHAR('woodbox.pov /EXIT'),
                   nil,1)>32 then
   {$ENDIF}
-  {$IFDEF LINUX}
+  {$IFDEF UNIX}
   //Not tested
   fpExecv(pr_path, 'woodbox.pov');
   {$ENDIF}
