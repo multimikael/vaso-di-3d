@@ -1,0 +1,19 @@
+object Form1: TForm1
+  Left = 252
+  Height = 240
+  Top = 204
+  Width = 320
+  Caption = 'Form1'
+  ClientHeight = 240
+  ClientWidth = 320
+  OnPaint = FormPaint
+  LCLVersion = '1.8.4.0'
+  object Image1: TImage
+    Left = 10
+    Height = 222
+    Top = 10
+    Width = 258
+    Proportional = True
+    Stretch = True
+  end
+end
