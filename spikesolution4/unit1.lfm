@@ -1,0 +1,71 @@
+object Form1: TForm1
+  Left = 255
+  Height = 138
+  Top = 210
+  Width = 320
+  Caption = 'Form1'
+  ClientHeight = 138
+  ClientWidth = 320
+  OnCreate = FormCreate
+  LCLVersion = '1.8.4.0'
+  object Edit1: TEdit
+    Left = 8
+    Height = 23
+    Top = 32
+    Width = 216
+    TabOrder = 0
+    Text = 'Edit1'
+  end
+  object Button1: TButton
+    Left = 232
+    Height = 25
+    Top = 30
+    Width = 75
+    Caption = 'Choose file'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object Label1: TLabel
+    Left = 10
+    Height = 15
+    Top = 10
+    Width = 74
+    Caption = 'Locate Povray'
+    ParentColor = False
+  end
+  object Button2: TButton
+    Left = 232
+    Height = 25
+    Top = 72
+    Width = 75
+    Caption = 'Run Povray'
+    OnClick = Button2Click
+    TabOrder = 2
+  end
+  object TrackBar1: TTrackBar
+    Left = 8
+    Height = 25
+    Top = 72
+    Width = 212
+    Max = 2
+    Min = -1
+    OnChange = TrackBar1Change
+    Position = 1
+    TabOrder = 3
+  end
+  object TrackBar2: TTrackBar
+    Left = 8
+    Height = 25
+    Top = 104
+    Width = 212
+    Max = 2
+    Min = -1
+    OnChange = TrackBar2Change
+    Position = 0
+    TabOrder = 4
+  end
+  object OpenDialog1: TOpenDialog
+    left = 10
+    top = 10
+  end
+end
