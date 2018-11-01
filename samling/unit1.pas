@@ -89,6 +89,7 @@ begin
   pr_path:=Edit1.Caption;
   Application.CreateForm(Unit2.TForm2, Form2);
   povray_path:=pr_path;
+  ParentForm:=Form1;
   Form2.Show();
   Form1.Hide();
 end;

@@ -26,6 +26,7 @@ type
     TrackBar3: TTrackBar;
     TrackBar4: TTrackBar;
     procedure Button1Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure TrackBar1Change(Sender: TObject);
     procedure TrackBar2Change(Sender: TObject);
@@ -46,6 +47,7 @@ var
   object_end: Double = 0.1;
   interval_size: Double = 0.05;
   x_factor: Double = 1;
+  ParentForm: TForm;
 
 const
   POV_FILE = 'figure.pov';
@@ -221,7 +223,7 @@ begin
     ProgressBar1.Position:=10;
     {$IFDEF WINDOWS}
     if ShellExecute(0,nil, PCHAR('"'+povray_path+'"'),
-       PCHAR(POV_FILE+' /EXIT'), nil,0)>32 then
+       PCHAR(POV_FILE+' /EXIT -D'), nil,0)>32 then
     begin
       ProgressBar1.Position:=90;
       Delay(2000);
@@ -252,6 +254,11 @@ begin
       + E.Message);
   end;
 
+end;
+
+procedure TForm2.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+  ParentForm.Close;
 end;
 
 procedure TForm2.TrackBar1Change(Sender: TObject);
