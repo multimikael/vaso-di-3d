@@ -210,6 +210,7 @@ procedure TForm2.FormCreate(Sender: TObject);
 begin
   DrawFunctions(Chart1);
   AssignFile(tfOut, POV_FILE);
+  DecimalSeparator:='.';
 end;
 
 procedure TForm2.Button1Click(Sender: TObject);
