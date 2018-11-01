@@ -1,0 +1,137 @@
+object Form2: TForm2
+  Left = 252
+  Height = 476
+  Top = 204
+  Width = 558
+  Caption = 'Form2'
+  ClientHeight = 476
+  ClientWidth = 558
+  OnCreate = FormCreate
+  LCLVersion = '1.8.4.0'
+  object Label1: TLabel
+    Left = 10
+    Height = 15
+    Top = 10
+    Width = 96
+    Caption = 'Left / Interval start'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 10
+    Height = 15
+    Top = 64
+    Width = 101
+    Caption = 'Right / Interval end'
+    ParentColor = False
+  end
+  object TrackBar1: TTrackBar
+    Left = 10
+    Height = 25
+    Top = 32
+    Width = 220
+    Max = 20
+    OnChange = TrackBar1Change
+    Position = 0
+    TabOrder = 0
+  end
+  object TrackBar2: TTrackBar
+    Left = 10
+    Height = 25
+    Top = 80
+    Width = 220
+    Max = 20
+    OnChange = TrackBar2Change
+    Position = 0
+    TabOrder = 1
+  end
+  object Label3: TLabel
+    Left = 10
+    Height = 15
+    Top = 112
+    Width = 98
+    Caption = ' Step / Interval size'
+    ParentColor = False
+  end
+  object TrackBar3: TTrackBar
+    Left = 10
+    Height = 25
+    Top = 128
+    Width = 220
+    Min = 1
+    OnChange = TrackBar3Change
+    Position = 10
+    TabOrder = 2
+  end
+  object Chart1: TChart
+    Left = 248
+    Height = 200
+    Top = 10
+    Width = 300
+    AxisList = <    
+      item
+        Marks.LabelBrush.Style = bsClear
+        Minors = <>
+        Title.LabelFont.Orientation = 900
+        Title.LabelBrush.Style = bsClear
+      end    
+      item
+        Alignment = calBottom
+        Marks.LabelBrush.Style = bsClear
+        Minors = <>
+        Title.LabelBrush.Style = bsClear
+      end>
+    Foot.Brush.Color = clBtnFace
+    Foot.Font.Color = clBlue
+    Title.Brush.Color = clBtnFace
+    Title.Font.Color = clBlue
+    Title.Text.Strings = (
+      'TAChart'
+    )
+  end
+  object Image1: TImage
+    Left = 248
+    Height = 208
+    Top = 224
+    Width = 300
+    Constraints.MaxHeight = 208
+    Constraints.MaxWidth = 300
+    Proportional = True
+    Stretch = True
+    StretchOutEnabled = False
+  end
+  object Button1: TButton
+    Left = 10
+    Height = 25
+    Top = 240
+    Width = 75
+    Caption = 'Render'
+    OnClick = Button1Click
+    TabOrder = 4
+  end
+  object ProgressBar1: TProgressBar
+    Left = 10
+    Height = 20
+    Top = 208
+    Width = 220
+    TabOrder = 5
+  end
+  object Label4: TLabel
+    Left = 10
+    Height = 15
+    Top = 152
+    Width = 116
+    Caption = 'X factor / cylinder size'
+    ParentColor = False
+  end
+  object TrackBar4: TTrackBar
+    Left = 8
+    Height = 25
+    Top = 168
+    Width = 222
+    Max = 5
+    Min = 1
+    OnChange = TrackBar4Change
+    Position = 2
+    TabOrder = 6
+  end
+end
