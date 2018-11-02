@@ -240,9 +240,10 @@ begin
     begin
       ProgressBar1.Position:=90;
       Image1.Picture.Clear;
-      Image1.Picture.LoadFromFile(POV_FILE);
+      ShowMessage(POV_FILE);
+      Image1.Picture.LoadFromFile(IMG_FILE);
       ProgressBar1.Position:=100;
-    end;
+    end
     else
       ShowMessage('Command exited with status code: ' + IntToStr(status));
     {$ENDIF}
